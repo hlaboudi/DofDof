@@ -34,7 +34,7 @@ https://github.com/hlaboudi/DofDof
 
 ### Premier écran 
 
-- Splash arrivant que l'accueil puis redirection sur le deuxieme ecran. 
+- Splash arrivant sur l'accueil puis redirection sur le deuxieme ecran. 
 <img src="app/imgreadme/55523399_398872697560981_271018711324819456_n.jpg" width ="300px" >  
 
 
