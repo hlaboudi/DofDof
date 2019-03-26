@@ -1,11 +1,14 @@
 package com.example.dofdof;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -15,12 +18,13 @@ import java.util.List;
 
 public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
     private List<Pets> values;
-
+    private Context context;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView txtHeader;
         public TextView txtFooter;
-        private View layout;
+        public View layout;
+        public RelativeLayout relativeLayout;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -64,8 +68,9 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, final int i) {
 
-        Pets pet = values.get(i);
+        final Pets pet = values.get(i);
         final String name = pet.getName();
+        final int id = pet.get_id();
         holder.txtHeader.setText(name);
         holder.txtHeader.setOnClickListener(new View.OnClickListener() {
 
@@ -74,7 +79,14 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
             }
         });
 
-        holder.txtFooter.setText("Bas de page: " + name);
+        holder.txtFooter.setText("numero : " + id);
+
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {// à changer
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,pet.getDescription(),Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
