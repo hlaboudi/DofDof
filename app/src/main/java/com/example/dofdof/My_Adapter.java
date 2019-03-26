@@ -14,7 +14,7 @@ import java.util.List;
  */
 
 public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
-private List<String> values;
+    private List<Pets> values;
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -34,18 +34,19 @@ private List<String> values;
         }
 
     }
-  //  public void add(int position, String item) {
-  //      values.add(position, item);
-  //      notifyItemInserted(position);
- //   }
+    //  public void add(int position, String item) {
+    //      values.add(position, item);
+    //      notifyItemInserted(position);
+    //   }
 
- //   public void remove(int position) {
-   //     values.remove(position);
-   //     notifyItemRemoved(position);
-  //  }
+    //   public void remove(int position) {
+    //     values.remove(position);
+    //     notifyItemRemoved(position);
+    //  }
 
-    public My_Adapter(List<String> myDataset)
-    {values = myDataset;
+    public My_Adapter(List<Pets> myDataset)
+    {
+        values = myDataset;
     }
 
 
@@ -63,14 +64,15 @@ private List<String> values;
     @Override
     public void onBindViewHolder(ViewHolder holder, final int i) {
 
-        final String name = values.get(i);
+        Pets pet = values.get(i);
+        final String name = pet.getName();
         holder.txtHeader.setText(name);
         holder.txtHeader.setOnClickListener(new View.OnClickListener() {
 
-          public void onClick(View v) {
-              values.remove(i); //ajout de values
-          }
-            });
+            public void onClick(View v) {
+                values.remove(i); //ajout de values
+            }
+        });
 
         holder.txtFooter.setText("Bas de page: " + name);
     }

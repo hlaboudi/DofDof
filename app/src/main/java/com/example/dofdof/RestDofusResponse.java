@@ -4,13 +4,13 @@ import java.util.List;
 
 public class RestDofusResponse {
 
-    private List<Famillier> results;
+    private List<Pets> results;
 
-    public List<Famillier> getResults() {
+    public List<Pets> getResults() {
         return results;
     }
 
-    public void setResults(List<Famillier> results) {
+    public void setResults(List<Pets> results) {
         this.results = results;
     }
 }

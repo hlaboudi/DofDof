@@ -1,6 +1,6 @@
 package com.example.dofdof;
 
-public class Famillier {
+public class Pets {
     private int _id;
     private String name;
     private String imgUrl;
