@@ -29,6 +29,7 @@ https://github.com/hlaboudi/DofDof
    - Splash ecran de lancement.
    - creation d'une branche (GitFlow)
    - Architecture MVC
+   - Build de l'apk (dans le fichier app)
 
 ## Fonctionnalités: 
 
