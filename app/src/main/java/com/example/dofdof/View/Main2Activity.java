@@ -1,9 +1,14 @@
-package com.example.dofdof;
+package com.example.dofdof.View;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.example.dofdof.Controller.MainController;
+import com.example.dofdof.Controller.My_Adapter;
+import com.example.dofdof.Model.Pets;
+import com.example.dofdof.R;
 
 import java.util.List;
 
@@ -19,9 +24,8 @@ public class Main2Activity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
-
         controller = new MainController(this);
-        controller.onSart();
+        controller.onStart();
 
 
         // use this setting to
@@ -35,13 +39,13 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
-    void showList(List<Pets> listPets) {
+    public void showList(List<Pets> listPets) {
         recyclerView.setHasFixedSize(true);
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         // define an adapter
-        mAdapter = new My_Adapter(listPets);
+        mAdapter = new My_Adapter(listPets,this);
         recyclerView.setAdapter(mAdapter);
     }
 }

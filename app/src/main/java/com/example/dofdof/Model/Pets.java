@@ -1,4 +1,4 @@
-package com.example.dofdof;
+package com.example.dofdof.Model;
 
 public class Pets {
     private int _id;

@@ -1,14 +1,16 @@
-package com.example.dofdof;
+package com.example.dofdof.Controller;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.view.LayoutInflater;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.dofdof.R;
 
 import java.util.List;
 
@@ -17,7 +19,7 @@ import java.util.List;
  */
 
 public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
-    private List<Pets> values;
+    private List<com.example.dofdof.Model.Pets> values;
     private Context context;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -48,7 +50,7 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
     //     notifyItemRemoved(position);
     //  }
 
-    public My_Adapter(List<Pets> myDataset)
+    public My_Adapter(List<com.example.dofdof.Model.Pets> myDataset)
     {
         values = myDataset;
     }
@@ -68,7 +70,7 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, final int i) {
 
-        final Pets pet = values.get(i);
+        final com.example.dofdof.Model.Pets pet = values.get(i);
         final String name = pet.getName();
         final int id = pet.get_id();
         holder.txtHeader.setText(name);

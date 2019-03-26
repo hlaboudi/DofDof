@@ -1,5 +1,8 @@
-package com.example.dofdof;
+package com.example.dofdof.Controller;
 
+import com.example.dofdof.Model.Pets;
+import com.example.dofdof.Model.RestDofusApi;
+import com.example.dofdof.View.Main2Activity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -12,15 +15,15 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-    public class MainController {
+public class MainController {
 
-        private Main2Activity activity;
+    private Main2Activity activity;
 
-        public MainController(Main2Activity main2Activity) {
-            this.activity = main2Activity;
-        }
+    public MainController(Main2Activity main2Activity) {
+        this.activity = main2Activity;
+    }
 
-        public void onSart()
+    public void onStart()
     {
         Gson gson = new GsonBuilder()
                 .setLenient()
