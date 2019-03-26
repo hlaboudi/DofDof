@@ -1,16 +1,20 @@
 package com.example.dofdof.Controller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.support.v7.widget.RecyclerView;
+import android.view.View.OnClickListener;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.dofdof.Model.Pets;
 import com.example.dofdof.R;
+import com.example.dofdof.View.Main3Activity;
 
 import java.util.List;
 
@@ -19,14 +23,14 @@ import java.util.List;
  */
 
 public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
-    private List<com.example.dofdof.Model.Pets> values;
+    private List<Pets> values;
     private Context context;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView txtHeader;
         public TextView txtFooter;
+        public ImageView image;
         public View layout;
-        public RelativeLayout relativeLayout;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -35,6 +39,7 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
             layout = itemView;
             txtHeader = (TextView) itemView.findViewById(R.id.firstLine);
             txtFooter = (TextView) itemView.findViewById(R.id.secondLine);
+            image = itemView.findViewById(R.id.imageView);
 
 
         }
@@ -50,8 +55,9 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
     //     notifyItemRemoved(position);
     //  }
 
-    public My_Adapter(List<com.example.dofdof.Model.Pets> myDataset)
+    public My_Adapter(List<Pets> myDataset, Context c)
     {
+        context = c;
         values = myDataset;
     }
 
@@ -70,25 +76,35 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, final int i) {
 
-        final com.example.dofdof.Model.Pets pet = values.get(i);
+        final Pets pet = values.get(i);
+
         final String name = pet.getName();
+
         final int id = pet.get_id();
+
+        final String desc = pet.getDescription();
+
+        final String maxstat = pet.getMaxStats();
+
+        final String image = pet.getImgUrl();
+        Glide.with(context).asBitmap().load(image).into(holder.image);
+
         holder.txtHeader.setText(name);
-        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
+
+        holder.txtHeader.setOnClickListener(new OnClickListener() {
 
             public void onClick(View v) {
-                values.remove(i); //ajout de values
+                Intent intent = new Intent(context, Main3Activity.class);
+                intent.putExtra("pet_name",name);
+                intent.putExtra("pet_desc",desc);
+                intent.putExtra("pet_maxstat",maxstat);
+                intent.putExtra("pet_image",image);
+                context.startActivity(intent);
             }
         });
 
         holder.txtFooter.setText("numero : " + id);
 
-        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {// à changer
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context,pet.getDescription(),Toast.LENGTH_LONG).show();
-            }
-        });
     }
 
     @Override
