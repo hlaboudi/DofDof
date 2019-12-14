@@ -2,12 +2,15 @@ package com.example.dofdof.Controller;
 
 import android.content.Context;
 import android.content.Intent;
+import android.renderscript.Sampler;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.support.v7.widget.RecyclerView;
 import android.view.View.OnClickListener;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,14 +19,17 @@ import com.example.dofdof.Model.Pets;
 import com.example.dofdof.R;
 import com.example.dofdof.View.Main3Activity;
 
+import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by hlaboudi on 25/03/2019.
  */
 
-public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
+public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> implements Filterable {
     private List<Pets> values;
+    private List<Pets> Valuescomplet;
     private Context context;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -54,11 +60,11 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
     //     values.remove(position);
     //     notifyItemRemoved(position);
     //  }
-
     public My_Adapter(List<Pets> myDataset, Context c)
     {
         context = c;
-        values = myDataset;
+        this.values = myDataset;
+        Valuescomplet = new ArrayList<Pets>(myDataset);
     }
 
 
@@ -113,5 +119,38 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
         return values.size();
     }
 
+    @Override
+    public Filter getFilter() {
+        return Values;
 
+    }
+    private Filter Values = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<Pets> filteredList = new ArrayList<>();
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(Valuescomplet);           //erreur
+                            }
+                            else {
+                                String filterPattern = constraint.toString().toLowerCase().trim();
+                                for (Pets item : Valuescomplet){                //rerreur
+
+                                    if (item.getName().toLowerCase().contains(filterPattern))           // verification
+                                    {filteredList.add(item); // erreur
+                                    }
+                                }
+            }
+            FilterResults results = new FilterResults();
+                            results.values = filteredList ; // pas notmral values la meme que lui
+
+                            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+        values.clear();                       // pas reconnu
+        values.addAll((List) results.values) ;    // pas reconnu et pas normal meme values*
+            notifyDataSetChanged();
+        }
+    };
 }
