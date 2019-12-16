@@ -1,17 +1,19 @@
 package com.example.dofdof.Model;
 
+import java.util.ArrayList;
+
 public class Pets {
     private int _id;
     private String name;
     private String imgUrl;
-    private String Url;
+    private String url;
     private String description;
-    private String MaxStats;
+    private ArrayList<String> maxstats;
+    private int lvl;
 
     public int get_id() {
         return _id;
     }
-
     public void set_id(int _id) {
         this._id = _id;
     }
@@ -33,11 +35,11 @@ public class Pets {
     }
 
     public String getUrl() {
-        return Url;
+        return url;
     }
 
     public void setUrl(String url) {
-        Url = url;
+        url = url;
     }
 
     public String getDescription() {
@@ -48,12 +50,16 @@ public class Pets {
         this.description = description;
     }
 
-    public String getMaxStats() {
-        return MaxStats;
+    public ArrayList<String> getMaxStats() {
+        return maxstats;
     }
 
-    public void setMaxStats(String maxStats) {
-        MaxStats = maxStats;
+    public void setMaxStats(ArrayList<String> maxStats) {
+        maxStats = maxStats;
+    }
+
+    public Integer getLevel() {
+        return lvl;
     }
 }
 

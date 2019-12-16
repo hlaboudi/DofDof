@@ -1,31 +1,28 @@
 package com.example .dofdof.View;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.dofdof.R;
 
-public class Main3Activity extends AppCompatActivity {
+public class PetActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_pet);
         intent();
     }
 
     private void intent() {
-        if (getIntent().hasExtra("pet_name") && getIntent().hasExtra("pet_desc") && getIntent().hasExtra("pet_image"))  {
-            String name = getIntent().getStringExtra("pet_name");
-            String desc = getIntent().getStringExtra("pet_desc");
-            String image = getIntent().getStringExtra("pet_image");
+        String name = getIntent().getStringExtra("name");
+        String desc = getIntent().getStringExtra("description");
+        String image = getIntent().getStringExtra("image");
 
-            petInformations(name, desc, image);
-
-        }
+        petInformations(name, desc, image);
     }
 
     private void petInformations(String pet_name, String pet_desc, String pet_image) {

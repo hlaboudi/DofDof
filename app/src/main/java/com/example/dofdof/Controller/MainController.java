@@ -2,10 +2,11 @@ package com.example.dofdof.Controller;
 
 import com.example.dofdof.Model.Pets;
 import com.example.dofdof.Model.RestDofusApi;
-import com.example.dofdof.View.Main2Activity;
+import com.example.dofdof.View.MainActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -17,32 +18,31 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainController {
 
-    private Main2Activity activity;
+    private MainActivity activity;
 
-    public MainController(Main2Activity main2Activity) {
-        this.activity = main2Activity;
+    public MainController(MainActivity mainActivity) {
+        this.activity = mainActivity;
     }
 
     public void onStart()
     {
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
+        Gson gson = new GsonBuilder().setLenient().create();
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://dofapi2.herokuapp.com/").addConverterFactory(GsonConverterFactory.create(gson)).build();
 
         RestDofusApi restDofusApi = retrofit.create(RestDofusApi.class);
 
-        Call<List<Pets>> call = restDofusApi.getListDofus();
-        call.enqueue(new Callback<List<Pets>>() {
+        Call<ArrayList<Pets>> call = restDofusApi.getListDofus();
+        call.enqueue(new Callback<ArrayList<Pets>>() {
             @Override
-            public void onResponse(Call<List<Pets>> call, Response<List<Pets>> response) {
-                List<Pets> listPets = response.body();
-                activity.showList(listPets);
+            public void onResponse(Call<ArrayList<Pets>> call, Response<ArrayList<Pets>> response) {
+                if(response.isSuccessful()){
+                    activity.initFragments(response.body());
+                } else{
+                    // response.code();
+                }
             }
-
-            @Override
-            public void onFailure(Call<List<Pets>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<Pets>> call, Throwable t) {
             }
         });
 
