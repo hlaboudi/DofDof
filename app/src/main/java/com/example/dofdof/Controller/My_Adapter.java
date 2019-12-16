@@ -72,7 +72,7 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> impl
             this.logo = itemView.findViewById(R.id.imageView);
             itemView.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
-                    mainActivity.goDetail(pets.get(getAdapterPosition()));
+                    mainActivity.goDetail(petsRecherche.get(getAdapterPosition()));
                 }
             });
         }
