@@ -50,16 +50,17 @@ https://github.com/hlaboudi/DofDof
 
 - Affichage de la liste des familier dofus et leurs numeros d'identifiants. 
 
-
+<img src="app/imgreadme/pets.jpg" width ="300px" > 
 
 ### Ecran deux : la liste des Pets de niveau 1 et de niveau 60 :
 fragment : 
-
+<img src="app/imgreadme/pets1.jpg" width ="300px" > 
+<img src="app/imgreadme/pets60.jpg" width ="300px" > 
 
 ### Ecran deux : recherche : 
 recherche d'un Pet.
 
-
+<img src="app/imgreadme/rechement.jpg" width ="300px" > 
 
 ### Ecran du détail du familier : 
 
@@ -68,7 +69,7 @@ recherche d'un Pet.
     - Le descriptif
     - Son apparance. 
 
-
+<img src="app/imgreadme/descriptif.jpg" width ="300px" > 
 
 
 
