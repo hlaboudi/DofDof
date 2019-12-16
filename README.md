@@ -32,6 +32,7 @@ https://github.com/hlaboudi/DofDof
 - barre de recherhe 
 - Affichage du détail d'un item de la liste
 - Menu Navigation / Bottom Bar
+- Anti-retour de la liste au Splash
 - Liste de Pets dofus
 - Détail Pets / descriptif
 - Splash ecran de lancement.
