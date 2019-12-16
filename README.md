@@ -43,7 +43,7 @@ https://github.com/hlaboudi/DofDof
 ### Premier écran 
 
 - Splash (2 sec ) arrivant sur la liste des familiers
-<img src="app/imgreadme/55523399_398872697560981_271018711324819456_n.jpg" width ="300px" >  
+<img src="app/imgreadme/chargement.jpg" width ="300px" >  
 
 
 ### Ecran deux : la liste complete des Pets : 
@@ -54,13 +54,13 @@ https://github.com/hlaboudi/DofDof
 
 ### Ecran deux : la liste des Pets de niveau 1 et de niveau 60 :
 fragment : 
-<img src="app/imgreadme/pets1.jpg" width ="300px" > 
+<img src="app/imgreadme/pets1.jpg" width ="300px" > , 
 <img src="app/imgreadme/pets60.jpg" width ="300px" > 
 
 ### Ecran deux : recherche : 
 recherche d'un Pet.
 
-<img src="app/imgreadme/rechement.jpg" width ="300px" > 
+<img src="app/imgreadme/chargement.jpg" width ="300px" > 
 
 ### Ecran du détail du familier : 
 
