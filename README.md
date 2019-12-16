@@ -29,7 +29,7 @@ https://github.com/hlaboudi/DofDof
 
 ### - Fonctions supplémentaires :
 
-- barre de recherhe 
+- barre de recherche 
 - Affichage du détail d'un item de la liste
 - Menu Navigation / Bottom Bar
 - Anti-retour de la liste au Splash
@@ -49,7 +49,7 @@ https://github.com/hlaboudi/DofDof
 
 ### Ecran deux : la liste complete des Pets : 
 
-- Affichage de la liste des familier dofus et leurs numeros d'identifiants. 
+- Affichage de la liste des familiers dofus et leurs numeros d'identifiants. 
 
 <img src="app/imgreadme/pets.jpg" width ="300px" > 
 
