@@ -27,7 +27,7 @@ https://github.com/hlaboudi/DofDof
 - Git
 
 
-- Fonctions supplémentaires :
+### - Fonctions supplémentaires :
 
 - barre de recherhe 
 - Affichage du détail d'un item de la liste
