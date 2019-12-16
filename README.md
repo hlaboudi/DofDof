@@ -20,11 +20,11 @@ https://github.com/hlaboudi/DofDof
 ````
 
 ## Consignes respectées : 
- -Fragment
- -Appel WebService à une API Rest.
- -Design
- -Architecture MVC
- -Git
+- Fragment
+- Appel WebService à une API Rest.
+- Design
+- Architecture MVC
+- Git
 
 
 - Fonctions supplémentaires :
