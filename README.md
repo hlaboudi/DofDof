@@ -54,8 +54,8 @@ https://github.com/hlaboudi/DofDof
 
 ### Ecran deux : la liste des Pets de niveau 1 et de niveau 60 :
 fragment : 
-<img src="app/imgreadme/pets1.jpg" width ="300px" > , 
-<img src="app/imgreadme/pets60.jpg" width ="300px" > 
+<img src="app/imgreadme/pets 1.jpg" width ="300px" > 
+<img src="app/imgreadme/pets 60.jpg" width ="300px" > 
 
 ### Ecran deux : recherche : 
 recherche d'un Pet.
